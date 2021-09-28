@@ -1,9 +1,13 @@
+---
+layout: default
+title: Day 2
+parent: Kotlin for java refugees
+nav_order: 2
+---
+
 # Day 2
-
 ## [Challenge](https://adventofcode.com/2020/day/2)
-
 We need to confirm that passwords meet the corporate policy.
-
 ```text
 1-3 a: abcde
 1-3 b: cdefg
