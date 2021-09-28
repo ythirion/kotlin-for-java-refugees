@@ -3,6 +3,7 @@ layout: default
 title: Day 2
 parent: Kotlin for java refugees
 nav_order: 2
+has_children: true
 ---
 
 # Day 2
