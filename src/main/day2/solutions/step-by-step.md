@@ -67,20 +67,21 @@ data class PasswordWithPolicy(
     val range: IntRange,
     val letter: Char
 ) {
-    companion object {
-        fun parse(line: String) = PasswordWithPolicy(
-            password = line.substringAfter(": "),
-            letter = line.substringAfter(" ").substringBefore(":").single(),
-            range = line.substringBefore(" ").let {
-                val (start, end) = it.split("-")
-                start.toInt()..end.toInt()
-            },
-        )
-    }
+  companion object {
+    fun parse(line: String) = PasswordWithPolicy(
+      password = line.substringAfter(": "),
+      letter = line.substringAfter(" ").substringBefore(":").single(),
+      range = line.substringBefore(" ").let {
+        val (start, end) = it.split("-")
+        start.toInt()..end.toInt()
+      },
+    )
+  }
+}
 ```
-
 * Or Extension functions
-    * `separate more clearly data from behaviors (functions)`
+    * separate more clearly data from behaviors (functions)
+
 ```kotlin
 data class PasswordWithPolicy(
     val password: String,
