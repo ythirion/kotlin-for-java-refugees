@@ -41,11 +41,10 @@ data class PasswordWithPolicy(
     val letter: Char
 )
 
-fun String.toPasswordPolicy() = PasswordWithPolicy(
-    password = this.substringAfter(": "),
-    letter = this.substringAfter(" ").substringBefore(":").single(),
-    range = this.substringBefore(" ").let {
-        val (start, end) = it.split("-")
-        start.toInt()..end.toInt()
-    },
-)
+private val regex = Regex("""(\d+)-(\d+) ([a-z]): ([a-z]+)""")
+fun String.toPasswordPolicy() =
+    regex.matchEntire(this)!!
+        .destructured
+        .let { (start, end, letter, password) ->
+            PasswordWithPolicy(password, start.toInt()..end.toInt(), letter.single())
+        }
