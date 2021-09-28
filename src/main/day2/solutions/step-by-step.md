@@ -98,16 +98,77 @@ fun String.toPasswordPolicy() = PasswordWithPolicy(
 )
 ```
 
-* Putting all together
+### Validate the password
+
+#### Part 1
+
+* Write a function to check if a password is valid :
+    * We count the number of occurrence of the given letter in the password
+    * Then we check if this count is in the Policy range
 
 ```kotlin
-@Test
-fun exercise1() {
-    val countValidPasswords = File("src/main/kotlin/day2/input.txt")
-        .readLines()
-        .map { it.toPasswordPolicy() }
-        .count { passwordWithPolicy -> passwordWithPolicy.password.count { it == passwordWithPolicy.letter } in passwordWithPolicy.range }
+private fun isValidPart1(passwordWithPolicy: PasswordWithPolicy) =
+    // equivalent to : range.first <= x && x <= range.last
+    passwordWithPolicy.password.count { it == passwordWithPolicy.letter } in passwordWithPolicy.range
+```
 
-    Assertions.assertEquals(622, countValidPasswords)
+#### Part 2
+
+* We need to check that exactly one of the positions (stored in the range) contains the given letter
+* We can use the boolean xor operator for that, which returns true if the operands are different
+
+```kotlin
+private fun isValidPart2(passwordWithPolicy: PasswordWithPolicy): Boolean {
+    return (passwordWithPolicy.password[passwordWithPolicy.range.first - 1] == passwordWithPolicy.letter) xor
+            (passwordWithPolicy.password[passwordWithPolicy.range.last - 1] == passwordWithPolicy.letter)
 }
 ```
+
+* We still have some redundancy here
+* Let's factorize by using an inner function
+
+```kotlin
+private fun isValidPart2(passwordWithPolicy: PasswordWithPolicy): Boolean {
+    fun isValid(rangeIndex: Int) = passwordWithPolicy.password[rangeIndex - 1] == passwordWithPolicy.letter
+    return isValid(passwordWithPolicy.range.first) xor isValid(passwordWithPolicy.range.last)
+}
+```
+
+### Putting all together
+
+```kotlin
+class Challenge {
+    private fun isValidPart1(passwordWithPolicy: PasswordWithPolicy) =
+        passwordWithPolicy.password.count { it == passwordWithPolicy.letter } in passwordWithPolicy.range
+
+    @Test
+    fun part1() {
+        val countValidPasswords = File("src/main/kotlin/day2/input.txt")
+            .readLines()
+            .map { it.toPasswordPolicy() }
+            .count { isValidPart1(it) }
+
+        Assertions.assertEquals(622, countValidPasswords)
+    }
+
+    private fun isValidPart2(passwordWithPolicy: PasswordWithPolicy): Boolean {
+        fun isValid(rangeIndex: Int) = passwordWithPolicy.password[rangeIndex - 1] == passwordWithPolicy.letter
+        return isValid(passwordWithPolicy.range.first) xor isValid(passwordWithPolicy.range.last)
+    }
+
+
+    @Test
+    fun part2() {
+        val countValidPasswords = File("src/main/kotlin/day2/input.txt")
+            .readLines()
+            .map { it.toPasswordPolicy() }
+            .count { isValidPart2(it) }
+
+        Assertions.assertEquals(263, countValidPasswords)
+    }
+}
+```
+
+## Step 4 - Refactor / improve our code
+
+> Congratulations we have solved the challenge !!!

@@ -1,23 +1,32 @@
 # Day 2
+
 ## [Challenge](https://adventofcode.com/2020/day/2)
+
 We need to confirm that passwords meet the corporate policy.
+
 ```text
 1-3 a: abcde
 1-3 b: cdefg
 2-9 c: ccccccccc
 ```
+
 Each line contains the `password policy` and the `password`.
 ![img.png](img/1.png)
+
 Our task is to check that the password :
+
 * is valid
 * conforms to the given policy
 
 > The policies are different in the first and the second parts of the challenge.
 
 ### Part 1
-The password policy indicates the lowest and highest number of times a given letter must appear for the password to be valid.
-![img.png](img/2.png)
-For example, 1-3 a means that the password must contain `a` at least once and at most 3 times.  
+
+The password policy indicates the lowest and highest number of times a given letter must appear for the password to be
+valid.  
+![img.png](img/2.png)  
+For example, 1-3 a means that the password must contain `a` at least once and at most 3 times.
+
 ```text
 1-3 a: abcde is valid : contains 1 `a` within the limits of the 3 occurences.
 1-3 b: cdefg is invalid : no `b` within the limits.
@@ -25,13 +34,17 @@ For example, 1-3 a means that the password must contain `a` at least once and at
 ```
 
 ### Part 2
+
 In the second part, the policy describes two positions in the password :
+
 * where 1 means the first character
 * 2 means the second character, and so on...
 * indexing starts at 1, not 0
-> Exactly one of these positions must contain the given letter. Other occurrences of the letter are irrelevant. 
+
+> Exactly one of these positions must contain the given letter. Other occurrences of the letter are irrelevant.
 
 Given the same example list from above:
+
 ```text
 1-3 a: abcde is valid: position 1 contains a and position 3 does not.
 1-3 b: cdefg is invalid: neither position 1 nor position 3 contains b.
@@ -39,13 +52,14 @@ Given the same example list from above:
 ```
 
 ### Exercise
+
 * How would you solve it ? - 10'
-  * In group, write down the pseudo algorithm (in comments for example)
+    * In group, write down the pseudo algorithm (in comments for example)
 * Collective debriefing - 10`
-  * Let's agree on how to implement it
-  * What do we need to write it in Kotlin ?
+    * Let's agree on how to implement it
+    * What do we need to write it in Kotlin ?
 * [Step by step](solutions/step-by-step.md) + koans - 20'
 * Let's implement the solution - 20'
 * Collective debriefing - 10'
-  * What can be improved ?
+    * What can be improved ?
   
