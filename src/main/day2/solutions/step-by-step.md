@@ -257,3 +257,6 @@ private fun countValidPasswords(isValid: (PasswordWithPolicy) -> Boolean): Int {
         .count { isValid(it) }
 }
 ```
+
+Based on JetBrains work
+available [here](https://blog.jetbrains.com/kotlin/2021/07/advent-of-code-in-idiomatic-kotlin-day2/)
