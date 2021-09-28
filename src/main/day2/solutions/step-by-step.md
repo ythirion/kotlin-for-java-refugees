@@ -82,5 +82,32 @@ data class PasswordWithPolicy(
     * `separate more clearly data from behaviors (functions)`
 
 ```kotlin
+data class PasswordWithPolicy(
+    val password: String,
+    val range: IntRange,
+    val letter: Char
+)
 
+fun String.toPasswordPolicy() = PasswordWithPolicy(
+    password = this.substringAfter(": "),
+    letter = this.substringAfter(" ").substringBefore(":").single(),
+    range = this.substringBefore(" ").let {
+        val (start, end) = it.split("-")
+        start.toInt()..end.toInt()
+    },
+)
+```
+
+* Putting all together
+
+```kotlin
+@Test
+fun exercise1() {
+    val countValidPasswords = File("src/main/kotlin/day2/input.txt")
+        .readLines()
+        .map { it.toPasswordPolicy() }
+        .count { passwordWithPolicy -> passwordWithPolicy.password.count { it == passwordWithPolicy.letter } in passwordWithPolicy.range }
+
+    Assertions.assertEquals(622, countValidPasswords)
+}
 ```
