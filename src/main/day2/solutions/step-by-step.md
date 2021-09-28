@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Step by step guide
+title: Step-by-step guide
 parent: Day 2
-nav_order: 2
 ---
 
+# Step-by-step guide
 ## Step 1 - Algorithm
 ```Kotlin
 readLines
