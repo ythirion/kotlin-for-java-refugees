@@ -1,3 +1,10 @@
+---
+layout: default
+title: Koans
+parent: Day 2
+nav_order: 1
+---
+
 ## Koans
 ### [Classes](https://kotlinlang.org/docs/classes.html)
 * Classes in Kotlin are declared using the keyword class:

@@ -1,9 +1,15 @@
-## Step 1 - Algorithm
+---
+layout: default
+title: Step by step guide
+parent: Day 2
+nav_order: 2
+---
 
+## Step 1 - Algorithm
 ```Kotlin
 readLines
-> parsePasswordPolicy
-> countValidPasswords
+  > parsePasswordPolicy
+  > countValidPasswords
 ```
 
 * `readLines()` : open the file and return each line as String
@@ -13,27 +19,22 @@ readLines
   policy
 
 ## Step 2 - What do we need ?
-
 * Class / Data Class to represent the data structure
 * Companion object
 * Extension functions
 * Scope functions
 
 [Let's learn this quickly](../koans.md)
-
 Go back to [main course](../day2.md)
 
 ## Step 3 - simple/naive implementation
-
 * Read lines from the input file
-
 ```kotlin
 File("src/main/kotlin/day2/input.txt")
     .readLines()
 ```
 
 * Represent the data structure
-
 ```kotlin
 data class PasswordWithPolicy(
     val password: String,
@@ -44,7 +45,6 @@ data class PasswordWithPolicy(
 ```
 
 * Parse the password policy from String
-
 ```kotlin
 fun parse(line: String) = PasswordWithPolicy(
     password = line.substringAfter(": "),
@@ -58,8 +58,7 @@ fun parse(line: String) = PasswordWithPolicy(
 ```
 
 * Where do we need to put the parsing logic ?
-    * Companion object
-
+    * Companion objects
 ```kotlin
 data class PasswordWithPolicy(
     val password: String,
@@ -80,7 +79,6 @@ data class PasswordWithPolicy(
 
 * Or Extension functions
     * `separate more clearly data from behaviors (functions)`
-
 ```kotlin
 data class PasswordWithPolicy(
     val password: String,
@@ -99,9 +97,7 @@ fun String.toPasswordPolicy() = PasswordWithPolicy(
 ```
 
 ### Validate the password
-
 #### Part 1
-
 * Write a function to check if a password is valid :
     * We count the number of occurrence of the given letter in the password
     * Then we check if this count is in the Policy range
@@ -113,7 +109,6 @@ private fun isValidPart1(passwordWithPolicy: PasswordWithPolicy) =
 ```
 
 #### Part 2
-
 * We need to check that exactly one of the positions (stored in the range) contains the given letter
 * We can use the boolean xor operator for that, which returns true if the operands are different
 
@@ -135,7 +130,6 @@ private fun isValidPart2(passwordWithPolicy: PasswordWithPolicy): Boolean {
 ```
 
 ### Putting all together
-
 ```kotlin
 class Challenge {
     private fun isValidPart1(passwordWithPolicy: PasswordWithPolicy) =
@@ -172,7 +166,6 @@ class Challenge {
 > Congratulations we have solved the challenge !!!
 
 ## Step 4 - Refactor / improve our code
-
 ```kotlin
 class Challenge {
     private fun isValidPart1(passwordWithPolicy: PasswordWithPolicy) =
@@ -258,5 +251,4 @@ private fun countValidPasswords(isValid: (PasswordWithPolicy) -> Boolean): Int {
 }
 ```
 
-Based on JetBrains work
-available [here](https://blog.jetbrains.com/kotlin/2021/07/advent-of-code-in-idiomatic-kotlin-day2/)
+Based on JetBrains work available [here](https://blog.jetbrains.com/kotlin/2021/07/advent-of-code-in-idiomatic-kotlin-day2/)

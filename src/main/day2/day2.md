@@ -14,18 +14,17 @@ We need to confirm that passwords meet the corporate policy.
 2-9 c: ccccccccc
 ```
 
-Each line contains the `password policy` and the `password`.
+Each line contains the `password policy` and the `password`.  
+
 ![img.png](img/1.png)
 
 Our task is to check that the password :
-
 * is valid
 * conforms to the given policy
 
 > The policies are different in the first and the second parts of the challenge.
 
 ### Part 1
-
 The password policy indicates the lowest and highest number of times a given letter must appear for the password to be
 valid.  
 ![img.png](img/2.png)  
@@ -38,9 +37,7 @@ For example, 1-3 a means that the password must contain `a` at least once and at
 ```
 
 ### Part 2
-
 In the second part, the policy describes two positions in the password :
-
 * where 1 means the first character
 * 2 means the second character, and so on...
 * indexing starts at 1, not 0
@@ -56,7 +53,6 @@ Given the same example list from above:
 ```
 
 ### Exercise
-
 * How would you solve it ? - 10'
     * In group, write down the pseudo algorithm (in comments for example)
 * Collective debriefing - 10`
