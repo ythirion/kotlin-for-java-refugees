@@ -62,4 +62,7 @@ Given the same example list from above:
 * Let's implement the solution - 20'
 * Collective debriefing - 10'
     * What can be improved ?
-    * Go back to the [Step by step page](solutions/step-by-step.md) on step 4 
+* Go back to the [Step by step page](solutions/step-by-step.md) on step 4 - 10'
+    * Let's refactor / improve our code
+* Debriefing - 5'
+    * What was th most important concept you discovered today ?
