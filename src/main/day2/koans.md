@@ -142,6 +142,7 @@ When you call such a function on an object with a lambda expression provided, it
 * In this scope, you can access the object without its name.
 * Such functions are called scope functions.
 * There are five of them: `let`, `run`, `with`, `apply`, and `also`.
+
 ```kotlin
 // Without let :
 val alice = Person("Alice", 20, "Amsterdam")
@@ -158,7 +159,9 @@ Person("Alice", 20, "Amsterdam").let {
     println(it)
 }
 ````
+
 * let scope invoked only when not null
+
 ```kotlin
 val listWithNulls: List<String?> = listOf("Kotlin", null, "Clojure", null, "Scala")
 for (item in listWithNulls) {
@@ -168,6 +171,7 @@ for (item in listWithNulls) {
 
 ### [Higher-oder functions](https://kotlinlang.org/docs/lambdas.html#higher-order-functions)
 A higher-order function is a function that takes functions as parameters, or returns a function
+
 ```kotlin
 fun <T, R> Collection<T>.fold(
     initial: R,
