@@ -2,6 +2,8 @@
 layout: default
 title: Koans
 parent: Day 2
+grand_parent: Kotlin for java refugees
+nav_order: 1
 ---
 
 ## Koans
