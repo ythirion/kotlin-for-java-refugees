@@ -241,3 +241,19 @@ fun String.toPasswordPolicy() =
 * `!!` is the `not-null assertion operator`
     * Converts any value to a non-null type and throws an exception if the value is null
     * More info [here](https://kotlinlang.org/docs/null-safety.html#the-operator)
+* The destructured property provides components for a destructuring assignment for groups defined in the regular
+  expression
+* We use its result together with let and destruct it inside the lambda expression, defining start, end, letter, and
+  password as parameters
+
+* Remove duplication by using a Higher Order Function taking the validation function as parameter
+    * [Higher-Order function](../koans.md)
+
+```kotlin
+private fun countValidPasswords(isValid: (PasswordWithPolicy) -> Boolean): Int {
+    return File("src/main/kotlin/day2/input.txt")
+        .readLines()
+        .map { it.toPasswordPolicy() }
+        .count { isValid(it) }
+}
+```
