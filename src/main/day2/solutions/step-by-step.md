@@ -60,7 +60,8 @@ fun parse(line: String) = PasswordWithPolicy(
 ```
 
 * Where do we need to put the parsing logic ?
-    * Companion objects
+  * Companion objects
+
 ```kotlin
 data class PasswordWithPolicy(
     val password: String,
