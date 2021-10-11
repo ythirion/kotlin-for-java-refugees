@@ -27,6 +27,8 @@ has_children: true
   * This Service needs a Repository to retrieve the data
     * Create it
 * Retrieve the Data from the Database
+
+#### Create messages
 * Add a new function in your controller to be able to create messages
   * Call your service / repository
 
@@ -47,6 +49,11 @@ CREATE TABLE IF NOT EXISTS messages
 * if the message id is null : generate one based on uuid
   * How could we implement that ?
   * Extension function can be helpful to generate a UUID based on the text input
+
+### ToDo
+* Demonstrates that we have access to KT extensions
+* Add Custom Validation
+  * Demonstrate that is easy to add custom annotations
 
 Final repository available [here](https://github.com/kotlin-hands-on/spring-time-in-kotlin-episode1)
 
