@@ -1,3 +1,23 @@
+// Variables
+
+fun variables() {
+    // immutable reference
+    val a: Int = 1  // immediate assignment
+    assert(a == 1)
+    val b = 2   // `Int` type is inferred
+    assert(b == 2)
+    val c: Int  // Type required when no initializer is provided
+    c = 3
+    assert(c == 3)
+
+    // mutable reference
+    var x = 5 // `Int` type is inferred
+    x +=1
+    assert(x == 6)
+}
+
+variables()
+
 // function
 
 // class
