@@ -12,7 +12,7 @@ fun variables() {
 
     // mutable reference
     var x = 5 // `Int` type is inferred
-    TODO("Add 1 to x)
+    TODO("Add 1 to x")
     assert(x == 6)
 }
 
@@ -35,9 +35,22 @@ fun evaluatePattern() {
 
 // Triple-quoted string
 
+val question = "life, the universe, and everything"
+val answer = 42
+
+TODO("Replace the trimIndent call with the trimMargin call taking # as the prefix value so that the resulting string doesn't contain the prefix character.")
+val tripleQuotedString = """
+    #question = "$question"
+    #answer = $answer""".trimIndent()
+
+fun printQuoted() {
+    println(tripleQuotedString)
+}
+
+printQuoted()
 
 // for loop
-class MyDate {
+/*class MyDate {
 
 }
 
@@ -47,6 +60,6 @@ fun iterateOverDateRange(firstDate: MyDate, secondDate: MyDate, handler: (MyDate
     for (date in firstDate..secondDate) {
         handler(date)
     }
-}
+}*/
 
 // collection

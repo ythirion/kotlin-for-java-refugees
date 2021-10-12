@@ -33,6 +33,21 @@ fun evaluatePattern() {
     assert(Regex(getPattern()).matches("13 JUN 1992"))
 }
 
+// Triple-quoted string
+
+val question = "life, the universe, and everything"
+val answer = 42
+
+val tripleQuotedString = """
+    #question = "$question"
+    #answer = $answer""".trimMargin("#")
+
+fun printQuoted() {
+    println(tripleQuotedString)
+}
+
+printQuoted()
+
 // for loop
 
 // collection
