@@ -63,7 +63,8 @@ has_children: true
   ```
 > This behavior can be problematic in Spring applications : some areas in Spring only work with non-final classes.
 * The natural solution is to manually open Kotlin classes using the open keyword or to use the kotlin-allopen plugin
-  * Which automatically opens all classes that are necessary for Spring to work
+  * Which automatically opens all classes that are necessary for Spring to work   
+  
   ```xml
   <dependency>
     <groupId>org.jetbrains.kotlin</groupId>
@@ -85,6 +86,7 @@ has_children: true
       * `*` is called the [spread operator](https://kotlinlang.org/docs/functions.html#variable-number-of-arguments-varargs)
       * Allowing us to call a function taking a vararg with an array
       * We just have to prefix the array with the operator
+      
       ```kotlin
       fun <T> asList(vararg ts: T): List<T> {
           val result = ArrayList<T>()
