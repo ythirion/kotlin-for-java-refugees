@@ -1,5 +1,6 @@
 // Data classes
 data class Person(val name: String, val age: Int)
+
 val neo = Person("Neo", 33)
 val trinity = Person("Trinity", 30)
 val neoV2 = neo.copy(name = "NeoV2")
@@ -12,8 +13,10 @@ class NonZeroPositiveInteger private constructor(private val value: Int) {
         fun from(value: Int): NonZeroPositiveInteger =
             if (value <= 0) throw IllegalArgumentException("NonZeroPositiveInteger can be instantiated only if value > 0")
             else NonZeroPositiveInteger(value)
+
         fun toInt(i: NonZeroPositiveInteger): Int = i.value
     }
+
     // We can declare operator as well
     operator fun plus(x: NonZeroPositiveInteger): NonZeroPositiveInteger = from(x.value + this.value)
     override fun toString(): String = value.toString()
