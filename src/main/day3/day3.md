@@ -99,8 +99,21 @@ has_children: true
       ```
 
 ### Create a message Controller (RestController)
-  * Return a hardcoded list of Message
-  * A message is composed by an id and a text
+* Return a hardcoded list of Message on `GET`
+* A message is composed by an id (String nullable) and a text
+
+```kotlin
+@RestController
+class MessageController {
+	@GetMapping
+	fun findMessages(): List<Message> = listOf(
+		Message("1", "Moi, à une époque, je voulais faire vœu de pauvreté (...) Mais avec le pognon que j'rentrais, j'arrivais pas à concilier les deux."),
+		Message("2", "Au bout d'un moment, il est vraiment druide, c'mec-là, ou ça fait quinze ans qu'il me prend pour un con ?")
+	)
+}
+
+data class Message(val id: String?, val text: String)
+```
 
 ### Add the Database
 * Create a Service that will contain 2 functions
