@@ -1,26 +1,31 @@
 // Variables
 
-fun variables() {
-    // immutable reference
-    val a: Int = 1  // immediate assignment
-    assert(a == 1)
-    val b = 2   // `Int` type is inferred
-    assert(b == 2)
-    val c: Int  // Type required when no initializer is provided
-    TODO("Assign 3 to c")
-    assert(c == 3)
+var x = 5 // `Int` type is inferred
+TODO("Add 1 to x")
+assert(x == 6)
 
-    // mutable reference
-    var x = 5 // `Int` type is inferred
-    TODO("Add 1 to x")
-    assert(x == 6)
-}
+// Function
 
-variables()
+fun start(): String = TODO()
 
-// function
+assert(start() == "OK")
 
-// class
+// Function : named arguments
+
+fun joinOptions(options: Collection<String>) =
+    options.joinToString(TODO())
+
+// Function : default arguments
+
+fun foo(name: String, number: Int, toUpperCase: Boolean) =
+    (if (toUpperCase) name.toUpperCase() else name) + number
+
+fun useFoo() = listOf(
+    foo("a"),
+    foo("b", number = 1),
+    foo("c", toUpperCase = true),
+    foo(name = "d", number = 2, toUpperCase = true)
+)
 
 // String template
 
@@ -50,6 +55,7 @@ fun printQuoted() {
 printQuoted()
 
 // for loop
+
 /*class MyDate {
 
 }

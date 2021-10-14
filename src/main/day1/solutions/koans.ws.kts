@@ -1,26 +1,31 @@
 // Variables
 
-fun variables() {
-    // immutable reference
-    val a: Int = 1  // immediate assignment
-    assert(a == 1)
-    val b = 2   // `Int` type is inferred
-    assert(b == 2)
-    val c: Int  // Type required when no initializer is provided
-    c = 3
-    assert(c == 3)
-
-    // mutable reference
-    var x = 5 // `Int` type is inferred
-    x +=1
-    assert(x == 6)
-}
-
-variables()
+var x = 5
+x +=1
+assert(x == 6)
 
 // function
 
-// class
+fun start(): String = "OK"
+
+assert(start() == "OK")
+
+// Function : named arguments
+
+fun joinOptions(options: Collection<String>) =
+    options.joinToString(prefix = "[", postfix = "]")
+
+// Function : default arguments
+
+fun foo(name: String, number: Int = 42, toUpperCase: Boolean = false) =
+    (if (toUpperCase) name.toUpperCase() else name) + number
+
+fun useFoo() = listOf(
+    foo("a"),
+    foo("b", number = 1),
+    foo("c", toUpperCase = true),
+    foo(name = "d", number = 2, toUpperCase = true)
+)
 
 // string template
 
