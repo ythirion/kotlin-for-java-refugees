@@ -308,7 +308,4 @@ class MessageService(private val repository: MessageRepository) {
 } 
 ```
 
-Final repository available [here](https://github.com/kotlin-hands-on/spring-time-in-kotlin-episode1)
-
-## Koans
-* [The TODO() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-t-o-d-o.html)
+Final repository available [here](https://github.com/ythirion/kotlin-for-java-refugees-day3)

@@ -68,4 +68,4 @@ CREATE TABLE IF NOT EXISTS messages
 * Use it in our `Service`
 * Refactor calls to the Mapper to use extension functions to hide mapper usage to the outside world
 
-Final code available [here](https://github.com/kotlin-hands-on/spring-time-in-kotlin-episode1)
+Final code available [here](https://github.com/ythirion/kotlin-for-java-refugees-day3)
