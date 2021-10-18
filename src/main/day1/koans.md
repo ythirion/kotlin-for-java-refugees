@@ -10,33 +10,62 @@ nav_order: 1
 
 ### [Variables](https://kotlinlang.org/docs/basic-syntax.html#variables)
 
-```
-// immutable reference
+* Immutable reference : variable cannot be reassigned, but the object is not immutable
+```kotlin
 val a: Int = 1  // immediate assignment
-assert(a == 1)
 val b = 2   // `Int` type is inferred
-assert(b == 2)
 val c: Int  // Type required when no initializer is provided
-TODO("Assign 3 to c")
-assert(c == 3)
+c = 2
+```
 
-// mutable reference
+* Mutable reference : variable can be reassigned
+```kotlin
 var x = 5 // `Int` type is inferred
 ```
 
 ### [Function](https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt)
 
+* Keyword `fun` for declaring a function
+* Classical way :  return type at the end of the function declaration and code contains a `return` statement
 ```
 fun classicWay(): Int {
 return 1
 }
+```
 
+* On the same line as the function declaration, directly return the result
+```
 fun lessClassic(): Int = 1
+```
 
+* Return type can be omitted
+```
 fun withReturnTypeInferrence() = 1
 ```
 
 #### [Named arguments](https://play.kotlinlang.org/koans/Introduction/Named%20arguments/Task.kt)
+
+* When declaring a function, you can have several parameters
+```kotlin
+fun reformat(
+    str: String,
+    normalizeCase: Boolean,
+    upperCaseFirstLetter: Boolean,
+    divideByCamelHumps: Boolean ,
+    wordSeparator: Char,
+) { /*...*/ }
+```
+* When calling this function, parameter name can be specified
+* You can freely change the order they are listed in
+```kotlin
+reformat(
+"String!",
+false,
+upperCaseFirstLetter = false,
+divideByCamelHumps = true,
+'_'
+)
+```
 
 #### [Default arguments](https://play.kotlinlang.org/koans/Introduction/Default%20arguments/Task.kt)
 
