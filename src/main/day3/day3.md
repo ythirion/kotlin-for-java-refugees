@@ -24,11 +24,15 @@ has_children: true
 ### Create a RestController
 1) Return a hardcoded list of Message on `GET`
    * A message is composed by an id (String nullable) and a text
+
 2) Add the missing Layers
   * Create a Service that will contain 2 functions : `findMessages` / `addMessage`
+
 3) What else do we need to do ?
+
 4) Add the Database / repository
    * Create the Repository needed by the Service to retrieve the data
+
 5) Plug everything together
    * Use our repository in our Service
    * Finalize our Service implementation by saving the Message
