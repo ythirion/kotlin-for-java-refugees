@@ -69,6 +69,20 @@ divideByCamelHumps = true,
 
 #### [Default arguments](https://play.kotlinlang.org/koans/Introduction/Default%20arguments/Task.kt)
 
+* Function parameters can have default values, which are used when you skip the corresponding argument. 
+* Reduces the number of overloads
+* Overriding methods always use the same default parameter values as the base method
+```kotlin
+fun foo(
+    bar: Int = 0,
+    baz: Int,
+) { /*...*/ }
+```
+
+```kotlin
+foo(baz = 1) // The default value bar = 0 is used
+```
+
 ### [String template](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
 
 ### [Triple-quoted string](https://play.kotlinlang.org/koans/Introduction/Triple-quoted%20strings/Task.kt)
