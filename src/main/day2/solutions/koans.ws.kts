@@ -29,6 +29,33 @@ NonZeroPositiveInteger.toInt(NonZeroPositiveInteger.from(9))
 // Use operator
 println(NonZeroPositiveInteger.from(9) + NonZeroPositiveInteger.from(5))
 
+// Alternative : Use inline class
+@JvmInline
+value class Password(private val str: String) {
+    init {
+        require(str.length > 0 && str.length < 10) {
+            throw IllegalArgumentException("Password must respect the Policy")
+        }
+    }
+}
+
+@JvmInline
+value class NonZeroPositiveInteger2(private val value: Int) {
+    init {
+        require(value > 0) {
+            throw IllegalArgumentException("NonZeroPositiveInteger2 can be instantiated only if value > 0")
+        }
+    }
+
+    operator fun plus(x: NonZeroPositiveInteger2): NonZeroPositiveInteger2 =
+        NonZeroPositiveInteger2(x.value + this.value)
+
+    override fun toString(): String = value.toString()
+}
+
+NonZeroPositiveInteger2(5) + NonZeroPositiveInteger2(4)
+
+
 // Extension Functions
 data class RationalNumber(val numerator: Int, val denominator: Int)
 
