@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Day 3
-parent: Kotlin for java refugees
-nav_order: 3
-has_children: true
+title: Step-by-step guide
+parent: Day 3
+grand_parent: Kotlin for java refugees
+nav_order: 1
 ---
 
 # Day 3 - Spring in Kotlin
@@ -11,7 +11,7 @@ has_children: true
 * Create a SpringBoot application from scratch
   * Use Spring Initializr
   * Add "Spring Web" / "Spring Data JDBC" / "H2 Database"
-  ![Spring initalizr](img/spring-init.png)
+  ![Spring initalizr](../img/spring-init.png)
   
 ### Observe the `pom.xml`
 * What is different from what you are used to ?
@@ -81,7 +81,7 @@ has_children: true
     ```kotlin
     runApplication<DemoApplication>(*args)
     ```
-    ![pointers](img/pointers.png)
+    ![pointers](../img/pointers.png)
     * No worries this is not a pointer 😜
       * `*` is called the [spread operator](https://kotlinlang.org/docs/functions.html#variable-number-of-arguments-varargs)
       * Allowing us to call a function taking a vararg with an array
@@ -167,7 +167,7 @@ class MessageService(private val repository: MessageRepository) {
 }
 ```
 * Can be simplified by using `IntelliJ` feature :
-![img.png](img/convert-expresion-body.png)
+![img.png](../img/convert-expresion-body.png)
 
 ```kotlin
 @Service
