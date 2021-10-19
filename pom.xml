@@ -7,6 +7,7 @@
     <artifactId>mainModule</artifactId>
     <modules>
         <module>day4</module>
+        <module>day1</module>
     </modules>
     <groupId>com.dino</groupId>
     <version>1.0-SNAPSHOT</version>
