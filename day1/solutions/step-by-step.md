@@ -41,7 +41,7 @@ val lines = File("src/main/kotlin/day1/input.txt")
 ```kotlin
 for (line1 in lines) {
     for(line2 in lines) {
-        println(line1 + " " + line2);
+        println(line1 + " " + line2)
     }
 }
 ```
@@ -50,7 +50,7 @@ for (line1 in lines) {
 for (line1 in lines) {
     for(line2 in lines) {
         if(lines1 + lines2 == 2020) {
-            println("OK");
+            println("OK")
             return
         }
     }
@@ -61,7 +61,7 @@ for (line1 in lines) {
 for (line1 in lines) {
     for(line2 in lines) {
         if(lines1 + lines2 == 2020) {
-            println("${lines1 * lines2}");
+            println(lines1 * lines2)
             return
         }
     }
@@ -74,7 +74,6 @@ for (line1 in lines) {
 * Store the result of the current number minus 2020 associated to the current number
 ```kotlin
 val complements = lines.associateWith { 2020 - it }
-}
 ```
 * Find one resulting numbers in the lines
 
