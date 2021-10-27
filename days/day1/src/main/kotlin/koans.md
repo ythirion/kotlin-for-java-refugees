@@ -87,4 +87,29 @@ foo(baz = 1) // The default value bar = 0 is used
 
 ### [For loop](https://kotlinlang.org/docs/basic-syntax.html#for-loop)
 
+* `for` loop iterates through anything that provides an iterator
+* Iterates through anything that provides an iterator
+* Has a member or an extension function iterator() that returns Iterator<>:
+  * has a member or an extension function next()
+  * has a member or an extension function hasNext() that returns Boolean.
+* All of these three functions need to be marked as operator.
+
+```kotlin
+for (item in collection) print(item)
+```
+
+```kotlin
+val items = listOf("apple", "banana", "kiwifruit")
+for (item in items) {
+    println(item)
+}
+```
+
 ### [Conditional expression](https://play.kotlinlang.org/byExample/02_control_flow/05_Conditional%20expression)
+
+* No ternary operator `condition ? then : else`
+* `if` may be used as an expression
+
+```kotlin
+fun max(a: Int, b: Int) = if (a > b) a else b
+```

@@ -44,3 +44,7 @@ fun iterateOverDateRange(firstDate: MyDate, secondDate: MyDate, handler: (MyDate
 }
 
 // conditional expression
+
+fun summarize(value: String): String = TODO("if value length > 10, remove trailing text (after character 7) and add it a trailing '...'")
+
+assert(summarize("this is my too long text") == "this is...")

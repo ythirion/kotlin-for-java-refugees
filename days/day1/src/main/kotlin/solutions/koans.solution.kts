@@ -18,7 +18,7 @@ fun joinOptions(options: Collection<String>) =
 // Function : default arguments
 
 fun foo(name: String, number: Int = 42, toUpperCase: Boolean = false) =
-    (if (toUpperCase) name.toUpperCase() else name) + number
+    (if (toUpperCase) name.uppercase() else name) + number
 
 fun useFoo() = listOf(
     foo("a"),
@@ -32,3 +32,7 @@ fun useFoo() = listOf(
 // for loop
 
 // conditional expression
+
+fun summarize(value: String): String = if (value.length > 10) value.substring(0..7) + "..." else value
+
+assert(summarize("this is my too long text") == "this is...")
