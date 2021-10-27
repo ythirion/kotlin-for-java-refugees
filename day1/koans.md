@@ -83,8 +83,8 @@ fun foo(
 foo(baz = 1) // The default value bar = 0 is used
 ```
 
-### [String template](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
-
-### [Triple-quoted string](https://play.kotlinlang.org/koans/Introduction/Triple-quoted%20strings/Task.kt)
+#### [Lambda](https://play.kotlinlang.org/koans/Introduction/Lambdas/Task.kt)
 
 ### [For loop](https://kotlinlang.org/docs/basic-syntax.html#for-loop)
+
+### [Conditional expression](https://play.kotlinlang.org/byExample/02_control_flow/05_Conditional%20expression)
