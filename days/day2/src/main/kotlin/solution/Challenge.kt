@@ -1,4 +1,4 @@
-package day2.solution
+package solution
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -20,7 +20,7 @@ class Challenge {
             }
 
     private fun countValidPasswords(isValid: (PasswordWithPolicy) -> Boolean): Int {
-        return File("src/main/kotlin/day2/input.txt")
+        return File("src/main/kotlin/input.txt")
             .readLines()
             .map { it.toPasswordPolicy() }
             .count { isValid(it) }

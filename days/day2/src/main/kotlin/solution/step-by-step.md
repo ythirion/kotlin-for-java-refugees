@@ -28,7 +28,7 @@ readLines
 
 [Let's learn this quickly](../koans.md)
 
-Then go back to [main course](../day2.md)
+Then go back to [main course](../../../../day2.md)
 
 ## Step 3 - simple/naive implementation
 * Read lines from the input file
