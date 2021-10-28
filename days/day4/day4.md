@@ -7,15 +7,25 @@ has_children: true
 ---
 
 # Day 4
+### Write a basic test - 15'
+In group, write down a basic test class with assertion
 
-### Exercise
-* Exo 1: In group, write down a basic test class with assertion
-* Exo 2: Create a simple integration test for controller
+### Write an Integration Test - 30'
+Create a simple integration test for a controller :
   * How to create it ? - 10'
     * What do we need to write it in Kotlin ?
     * Let's implement the solution - 20'
     * Collective debriefing - 10'
       * What can be improved ?
-* Ex 3: Refactoring and clean test
-* Debriefing - 5'
-  * What was the most important concept you discovered today ?
+
+### Clean Test - 30'
+ Refactoring and clean test - 30'
+ * Take a few minutes to identify anti-patterns in the tests - 5'
+ * Collective debriefing - 5'
+   * Anti-patterns to find [here](/src/main/kotlin/solutions/step-by-step.md)
+ * Let's refactor the tests - 10'
+   * By using what you have seen during the previous days, how could you better organize the tests ?
+ * Collective debriefing - 10'
+
+## Debriefing - 5'
+What was the most important concept you discovered today ?

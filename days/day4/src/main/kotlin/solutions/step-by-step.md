@@ -45,7 +45,7 @@ private lateinit var service: MessageService
 @Test
 fun `find messages`() {
 
-    Mockito.`when`(service.findMessages()).thenReturn(listOf(Message("1", "First"), Message("2", "Second")));
+    Mockito.`when`(service.findMessages()).thenReturn(listOf(Message("1", "First"), Message("2", "Second")))
 
     mockMvc.perform(MockMvcRequestBuilders.get("/"))
         .andExpect(MockMvcResultMatchers.status().isOk)
@@ -98,10 +98,9 @@ fun `find messages`() {
 }
 ```
 
-* Create a customer extention for test
+* Create a customer extension for test
 
 ### Refactoring  and clean Tests
-
 #### Analyse tests:
 
 * Have a business oriented name for the test
