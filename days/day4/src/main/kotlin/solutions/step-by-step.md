@@ -26,7 +26,7 @@ class DemoTest {
 
 * Start spring boot test like in Java
 
- ```code:xml
+ ```xml
      <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-test</artifactId>
@@ -39,7 +39,7 @@ class DemoTest {
 * Solution N°1: Create test as we do with java and Mockito
 
 ```kotlin
-    @MockBean
+@MockBean
 private lateinit var service: MessageService
 
 @Test
@@ -60,25 +60,24 @@ fun `find messages`() {
 ```
 
 * Solution N°2
-    * Recreate the test using extentions (DSL) provider by spring
+    * Recreate the test using extensions (DSL) provider by spring
     * use [Mockk](https://mockk.io/) is a mocking library for kotlin
 
 ```xml
-
 <dependency>
     <groupId>io.mockk</groupId>
     <artifactId>mockk</artifactId>
     <version>1.10.4</version>
 </dependency>
 <dependency>
-<groupId>com.ninja-squad</groupId>
-<artifactId>springmockk</artifactId>
-<version>3.0.1</version>
+    <groupId>com.ninja-squad</groupId>
+    <artifactId>springmockk</artifactId>
+    <version>3.0.1</version>
 </dependency>
 ```
 
 ```kotlin
-    @Test
+@Test
 fun `find messages`() {
     every { service.findMessages() } returns listOf(
         Message("1", "First"),
@@ -109,7 +108,7 @@ fun `find messages`() {
 * What is a Right ? What is a valid comment ?
 
 ```kotlin
-        fun `returns a Right for valid comment`() {
+fun `returns a Right for valid comment`() {
     val blogService = BlogService()
     val article = Article(
         "Lorem Ipsum",
@@ -127,7 +126,7 @@ fun `find messages`() {
 * Tests should be behavior focus -> not data driven
 
 ```kotlin
-    fun `add a comment with the given text`() {
+fun `add a comment with the given text`() {
     val blogService = BlogService()
     val article = Article(
         "Lorem Ipsum",
@@ -156,7 +155,7 @@ fun `add a comment with the given author`() {
 * Missing assertions
 
 ```kotlin
-        fun `add a comment with the date of the day`() {
+fun `add a comment with the date of the day`() {
     val blogService = BlogService()
     val article = Article(
         "Lorem Ipsum",
@@ -170,7 +169,7 @@ fun `add a comment with the given author`() {
 * What is inside the Left ?
 
 ```kotlin
-        fun `returns a Left when adding existing comment`() {
+fun `returns a Left when adding existing comment`() {
     val blogService = BlogService()
     val article = Article(
         "Lorem Ipsum",
@@ -183,8 +182,3 @@ fun `add a comment with the given author`() {
     assert(result.isLeft)
 }
 ```
-
-
-
-
-    
