@@ -66,4 +66,4 @@ Given the same example list from above:
 * Go back to the [Step by step page](src/main/kotlin/solution/step-by-step.md) on step 4 - 10'
     * Let's refactor / improve our code
 * Debriefing - 5'
-    * What was th most important concept you discovered today ?
+    * What do you think about Kotlin after those 2 days ?
