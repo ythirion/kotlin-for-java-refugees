@@ -1,5 +1,8 @@
 package demo.blog
 
+import demo.blog.Article
+import demo.blog.BlogService
+import demo.blog.Comment
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
