@@ -23,6 +23,36 @@ c = 2
 var x = 5 // `Int` type is inferred
 ```
 
+
+### [For loop](https://kotlinlang.org/docs/basic-syntax.html#for-loop)
+
+* `for` loop iterates through anything that provides an iterator
+* Iterates through anything that provides an iterator
+* Has a member or an extension function iterator() that returns Iterator<>:
+* has a member or an extension function next()
+* has a member or an extension function hasNext() that returns Boolean.
+* All of these three functions need to be marked as [operator](https://kotlinlang.org/docs/operator-overloading.html).
+
+```kotlin
+for (item in collection) print(item)
+```
+
+```kotlin
+   val items = listOf("apple", "banana", "kiwifruit")
+   for (item in items) {
+   println(item)
+   }
+```
+
+### [Conditional expression](https://play.kotlinlang.org/byExample/02_control_flow/05_Conditional%20expression)
+
+* No ternary operator `condition ? then : else`
+* `if` may be used as an expression
+
+```kotlin
+   fun max(a: Int, b: Int) = if (a > b) a else b
+```
+
 ### [Function](https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt)
 
 * Keyword `fun` for declaring a function
@@ -48,34 +78,34 @@ fun withReturnTypeInferrence() = 1
 * When declaring a function, you can have several parameters
 ```kotlin
 fun reformat(
-    str: String,
-    normalizeCase: Boolean,
-    upperCaseFirstLetter: Boolean,
-    divideByCamelHumps: Boolean ,
-    wordSeparator: Char,
+  str: String,
+  normalizeCase: Boolean,
+  upperCaseFirstLetter: Boolean,
+  divideByCamelHumps: Boolean ,
+  wordSeparator: Char,
 ) { /*...*/ }
 ```
 * When calling this function, parameter name can be specified
 * You can freely change the order they are listed in
 ```kotlin
 reformat(
-"String!",
-false,
-upperCaseFirstLetter = false,
-divideByCamelHumps = true,
-'_'
+  "String!",
+  false,
+  upperCaseFirstLetter = false,
+  divideByCamelHumps = true,
+  '_'
 )
 ```
 
 #### [Default arguments](https://play.kotlinlang.org/koans/Introduction/Default%20arguments/Task.kt)
 
-* Function parameters can have default values, which are used when you skip the corresponding argument. 
+* Function parameters can have default values, which are used when you skip the corresponding argument.
 * Reduces the number of overloads
 * Overriding methods always use the same default parameter values as the base method
 ```kotlin
 fun foo(
-    bar: Int = 0,
-    baz: Int,
+  bar: Int = 0,
+  baz: Int,
 ) { /*...*/ }
 ```
 
@@ -106,32 +136,3 @@ val upperCase6: (String) -> String = String::uppercase                  // 6
 4. You cannot do both together, the compiler has no chance to infer the type that way.
 5. For lambdas with a single parameter, you don't have to explicitly name `it`. Instead, you can use the implicit `it` variable. This is especially useful when the type of `it` can be inferred (which is often the case).
 6. If your lambda consists of a single function call, you may use function pointers `::`
-
-### [For loop](https://kotlinlang.org/docs/basic-syntax.html#for-loop)
-
-* `for` loop iterates through anything that provides an iterator
-* Iterates through anything that provides an iterator
-* Has a member or an extension function iterator() that returns Iterator<>:
-  * has a member or an extension function next()
-  * has a member or an extension function hasNext() that returns Boolean.
-* All of these three functions need to be marked as operator.
-
-```kotlin
-for (item in collection) print(item)
-```
-
-```kotlin
-val items = listOf("apple", "banana", "kiwifruit")
-for (item in items) {
-    println(item)
-}
-```
-
-### [Conditional expression](https://play.kotlinlang.org/byExample/02_control_flow/05_Conditional%20expression)
-
-* No ternary operator `condition ? then : else`
-* `if` may be used as an expression
-
-```kotlin
-fun max(a: Int, b: Int) = if (a > b) a else b
-```
