@@ -1,7 +1,7 @@
 // Variables
 
 var x = 5 // `Int` type is inferred
-TODO("Add 1 to x")
+// TODO("Add 1 to x")
 assert(x == 6)
 
 // Function
@@ -28,6 +28,12 @@ fun useFoo() = listOf(
 )
 
 // Function : lambda
+
+// Pass a lambda to the any function to check if the collection contains an even number.
+// The any function gets a predicate as an argument and returns true if at least one
+// element satisfies the predicate.
+fun containsEven(collection: Collection<Int>): Boolean =
+    collection.any(TODO())
 
 // for loop
 

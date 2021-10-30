@@ -14,6 +14,8 @@ readLines
 ```
 
 * `readLines()` : open the file and return each line as String
+* for each value (one value by line), find another value with a result of 2020 for the addition
+* display the result of their multiplication
 
 ## Step 2 - What do we need ?
 * Function to run our code
