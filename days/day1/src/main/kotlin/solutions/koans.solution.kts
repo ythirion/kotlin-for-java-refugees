@@ -1,23 +1,3 @@
-// Variables
-
-var x = 5
-x +=1
-assert(x == 6)
-
-// for loop
-
-val cakes = listOf("carrot", "cheese", "chocolate")
-
-for (cake in cakes) {
-    println(cake)
-}
-
-// conditional expression
-
-fun summarize(value: String): String = if (value.length > 10) value.substring(0..7) + "..." else value
-
-assert(summarize("this is my too long text") == "this is...")
-
 // function
 
 fun start(): String = "OK"
@@ -48,3 +28,24 @@ fun useFoo() = listOf(
 // element satisfies the predicate.
 fun containsEven(collection: Collection<Int>): Boolean =
     collection.any { it % 2 == 0 }
+
+// Variables
+
+var x = 5
+x +=1
+assert(x == 6)
+
+// for loop
+
+val cakes = listOf("carrot", "cheese", "chocolate")
+
+for (cake in cakes) {
+    println(cake)
+}
+
+// conditional expression
+
+fun summarize(value: String): String = if (value.length > 10) value.substring(0..7) + "..." else value
+
+assert(summarize("this is my too long text") == "this is...")
+

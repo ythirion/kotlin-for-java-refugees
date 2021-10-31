@@ -8,51 +8,6 @@ nav_order: 1
 
 ## Koans
 
-### [Variables](https://kotlinlang.org/docs/basic-syntax.html#variables)
-
-* Immutable reference : variable cannot be reassigned, but the object is not immutable
-```kotlin
-val a: Int = 1  // immediate assignment
-val b = 2   // `Int` type is inferred
-val c: Int  // Type required when no initializer is provided
-c = 2
-```
-
-* Mutable reference : variable can be reassigned
-```kotlin
-var x = 5 // `Int` type is inferred
-```
-
-
-### [For loop](https://kotlinlang.org/docs/basic-syntax.html#for-loop)
-
-* `for` loop iterates through anything that provides an iterator
-* Iterates through anything that provides an iterator
-* Has a member or an extension function iterator() that returns Iterator<>:
-* has a member or an extension function next()
-* has a member or an extension function hasNext() that returns Boolean.
-* All of these three functions need to be marked as [operator](https://kotlinlang.org/docs/operator-overloading.html).
-
-```kotlin
-for (item in collection) print(item)
-```
-
-```kotlin
-   val items = listOf("apple", "banana", "kiwifruit")
-   for (item in items) {
-   println(item)
-   }
-```
-
-### [Conditional expression](https://play.kotlinlang.org/byExample/02_control_flow/05_Conditional%20expression)
-
-* No ternary operator `condition ? then : else`
-* `if` may be used as an expression
-
-```kotlin
-   fun max(a: Int, b: Int) = if (a > b) a else b
-```
-
 ### [Function](https://play.kotlinlang.org/koans/Introduction/Hello,%20world!/Task.kt)
 
 * Keyword `fun` for declaring a function
@@ -136,3 +91,83 @@ val upperCase6: (String) -> String = String::uppercase                  // 6
 4. You cannot do both together, the compiler has no chance to infer the type that way.
 5. For lambdas with a single parameter, you don't have to explicitly name `it`. Instead, you can use the implicit `it` variable. This is especially useful when the type of `it` can be inferred (which is often the case).
 6. If your lambda consists of a single function call, you may use function pointers `::`
+
+### [Variables](https://kotlinlang.org/docs/basic-syntax.html#variables)
+
+* Immutable reference : variable cannot be reassigned, but the object is not immutable
+```kotlin
+val a: Int = 1  // immediate assignment
+val b = 2   // `Int` type is inferred
+val c: Int  // Type required when no initializer is provided
+c = 2
+```
+
+* Mutable reference : variable can be reassigned
+```kotlin
+var x = 5 // `Int` type is inferred
+```
+
+### [Triple-quoted string](https://play.kotlinlang.org/koans/Introduction/Triple-quoted%20strings/Task.kt)
+
+* A String literal that can contains newlines and arbitrary text
+* Raw string is delimited by `"""`
+* To remove leading whitespace from raw strings, use the `trimMargin()` function
+```kotlin
+val text = """
+    |Tell me and I forget.
+    |Teach me and I remember.
+    |Involve me and I learn.
+    |(Benjamin Franklin)
+    """.trimMargin()
+```
+
+### [For loop](https://kotlinlang.org/docs/basic-syntax.html#for-loop)
+
+* `for` loop iterates through anything that provides an iterator
+* Iterates through anything that provides an iterator
+* Has a member or an extension function iterator() that returns Iterator<>:
+* has a member or an extension function next()
+* has a member or an extension function hasNext() that returns Boolean.
+* All of these three functions need to be marked as [operator](https://kotlinlang.org/docs/operator-overloading.html).
+
+```kotlin
+for (item in collection) print(item)
+```
+
+```kotlin
+   val items = listOf("apple", "banana", "kiwifruit")
+   for (item in items) {
+   println(item)
+   }
+```
+
+### [Conditional expression](https://play.kotlinlang.org/byExample/02_control_flow/05_Conditional%20expression)
+
+* No ternary operator `condition ? then : else`
+* `if` may be used as an expression
+
+```kotlin
+   fun max(a: Int, b: Int) = if (a > b) a else b
+```
+* is Equivalent to :
+```kotlin
+   fun max(a: Int, b: Int): Int {
+    if (a > b) 
+        return a 
+    else 
+        return b  
+   } 
+```
+
+### [String template](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
+
+* Allow to execute some code a part of a string literal
+```kotlin
+var a = 1
+// simple name in template:
+val s1 = "a is $a" 
+
+a = 2
+// arbitrary expression in template:
+val s2 = "${s1.replace("is", "was")}, but now is $a"
+```
