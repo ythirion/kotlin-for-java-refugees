@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Day 1
+title: Day 1 - Fundamentals
 parent: Kotlin for java refugees
 nav_order: 2
 has_children: true

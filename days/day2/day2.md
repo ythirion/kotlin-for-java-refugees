@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Day 2
+title: Day 2 - Password challenge
 parent: Kotlin for java refugees
 nav_order: 2
 has_children: true

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Day 3
+title: Day 3 - Spring in Kotlin
 parent: Kotlin for java refugees
 nav_order: 3
 has_children: true
