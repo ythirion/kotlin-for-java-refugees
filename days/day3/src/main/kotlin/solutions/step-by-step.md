@@ -9,7 +9,8 @@ nav_order: 1
 # Day 3 - Spring in Kotlin
 ## [Challenge](https://youtu.be/gf-kjD2ZmZk) - create a SpringBoot app
 * Create a SpringBoot application from scratch
-  * Use Spring Initializr
+  * Use [Spring Initializr](https://start.spring.io/) or directly from [IntelliJ](https://www.jetbrains.com/help/idea/spring-boot.html#custom-configuration-files)
+   ![Spring init in IntelliJ](../../../../img/intellij-spring-init.png)
   * Add "Spring Web" / "Spring Data JDBC" / "H2 Database"
   ![Spring initalizr](../../../../img/spring-init.png)
   
