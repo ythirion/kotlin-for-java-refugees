@@ -84,6 +84,19 @@ public class Person {
 }
 ```
 
+### [Objects](https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview)
+The Singleton pattern can be useful in several cases, and Kotlin makes it easy to declare singletons:
+```kotlin
+object DataProviderManager {
+    fun registerDataProvider(provider: DataProvider) {
+        // ...
+    }
+
+    val allDataProviders: Collection<DataProvider>
+        get() = // ...
+}
+```
+
 ### [Companion Objects](https://kotlinlang.org/docs/object-declarations.html#companion-objects)
 An object declaration inside a class can be marked with the companion keyword:
 ```kotlin
