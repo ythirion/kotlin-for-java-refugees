@@ -72,4 +72,4 @@ CREATE TABLE IF NOT EXISTS messages
 * Use it in our `Service`
 * Refactor calls to the Mapper to use extension functions to hide mapper usage to the outside world
 
-Final code available in day 4
+Final version available in [day 4](https://github.com/ythirion/kotlin-for-java-refugees/tree/main/days/day4)

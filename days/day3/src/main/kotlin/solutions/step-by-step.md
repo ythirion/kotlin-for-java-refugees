@@ -311,4 +311,4 @@ class MessageService(private val repository: MessageRepository) {
 } 
 ```
 
-Final repository available [here](https://github.com/ythirion/kotlin-for-java-refugees-day3)
+Final version available in [day 4](https://github.com/ythirion/kotlin-for-java-refugees/tree/main/days/day4)
