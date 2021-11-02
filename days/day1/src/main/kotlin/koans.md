@@ -72,6 +72,7 @@ foo(baz = 1) // The default value bar = 0 is used
 
 * Lambda functions ("lambdas") are a simple way to create functions ad-hoc
 * Can be denoted very concisely in many cases thanks to type inference and the implicit `it` variable.
+
 ```kotlin
 val upperCase1: (String) -> String = { str: String -> str.uppercase() } // 1
 
@@ -85,6 +86,7 @@ val upperCase5: (String) -> String = { it.uppercase() }                 // 5
 
 val upperCase6: (String) -> String = String::uppercase                  // 6
 ```
+
 1. A lambda in all its glory, with explicit types everywhere. The lambda is the part in curly braces, which is assigned to a variable of type `(String) -> String` (a function type).
 2. Type inference inside lambda: the type of the lambda parameter is inferred from the type of the variable it's assigned to.
 3. Type inference outside lambda: the type of the variable is inferred from the type of the lambda parameter and return value.
@@ -95,6 +97,7 @@ val upperCase6: (String) -> String = String::uppercase                  // 6
 ### [Variables](https://kotlinlang.org/docs/basic-syntax.html#variables)
 
 * Immutable reference : variable cannot be reassigned, but the object is not immutable
+
 ```kotlin
 val a: Int = 1  // immediate assignment
 val b = 2   // `Int` type is inferred
@@ -103,6 +106,7 @@ c = 2
 ```
 
 * Mutable reference : variable can be reassigned
+
 ```kotlin
 var x = 5 // `Int` type is inferred
 ```
@@ -112,6 +116,7 @@ var x = 5 // `Int` type is inferred
 * A String literal that can contains newlines and arbitrary text
 * Raw string is delimited by `"""`
 * To remove leading whitespace from raw strings, use the `trimMargin()` function
+
 ```kotlin
 val text = """
     |Tell me and I forget.
@@ -150,6 +155,7 @@ for (item in collection) print(item)
    fun max(a: Int, b: Int) = if (a > b) a else b
 ```
 * is Equivalent to :
+
 ```kotlin
    fun max(a: Int, b: Int): Int {
     if (a > b) 
@@ -162,6 +168,7 @@ for (item in collection) print(item)
 ### [String template](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
 
 * Allow to execute some code a part of a string literal
+
 ```kotlin
 var a = 1
 // simple name in template:
