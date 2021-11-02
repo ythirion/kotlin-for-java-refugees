@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Koans
-parent: Day 1
+parent: Day 1 - Fundamentals
 grand_parent: Kotlin for java refugees
 nav_order: 1
 ---

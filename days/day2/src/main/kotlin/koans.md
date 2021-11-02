@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Koans
-parent: Day 2
+parent: Day 2 - Password challenge
 grand_parent: Kotlin for java refugees
 nav_order: 1
 ---

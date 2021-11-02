@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Step-by-step guide
-parent: Day 3
+parent: Day 3 - Spring in Kotlin
 grand_parent: Kotlin for java refugees
 nav_order: 1
 ---
