@@ -121,6 +121,21 @@ fun from(value: Int): NonZeroPositiveInteger = { ... }
 fun toInt(i: NonZeroPositiveInteger): Int = { ... }
 ```
 
+### [Inline classes](https://kotlinlang.org/docs/inline-classes.html)
+Sometimes it is necessary for business logic to create a wrapper around some type. 
+Kotlin introduces a special kind of class called `inline class`. 
+They don't have an identity and can only hold values.
+
+To declare an inline class for the JVM backend, use the value modifier along with the @JvmInline annotation before the class declaration:
+```kotlin
+// For JVM backends
+@JvmInline
+value class Password(private val s: String)
+```
+> An inline class must have a single property initialized in the primary constructor. At runtime, instances of the inline class will be represented using this single property
+
+You have 2 examples of it in the `koans-solution.ws.kts` file
+
 ### [Extension functions](https://kotlinlang.org/docs/extensions.html)
 Kotlin provides the ability to extend a class with new functionality without having to inherit from the class or use design patterns such as Decorator.
 > For example, you can write new functions for a class from a third-party library that you can't modify
@@ -199,3 +214,11 @@ fun <T, R> Collection<T>.fold(
     return accumulator
 }
 ```
+
+Using higher-order functions imposes certain runtime penalties: 
+* each function is an object
+* it captures a closure
+
+`A closure is a scope of variables that can be accessed in the body of the function.`
+
+Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.
