@@ -215,10 +215,37 @@ fun <T, R> Collection<T>.fold(
 }
 ```
 
+#### [Inline functions](https://www.baeldung.com/kotlin/inline-functions)
 Using higher-order functions imposes certain runtime penalties: 
 * each function is an object
 * it captures a closure
 
 `A closure is a scope of variables that can be accessed in the body of the function.`
 
-Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.
+Every time we declare a higher-order function, at least one instance of those special Function* types will be created.  
+The extra memory allocations get even worse when a lambda captures a variable: **The JVM creates a function type instance on every invocation.**
+
+When using inline functions, the compiler inlines the function body.  
+It substitutes the body directly into places where the function gets called. 
+> By default, the compiler inlines the code for both the function itself and the lambdas passed to it.
+ ```kotlin
+inline fun <T> Collection<T>.each(block: (T) -> Unit) {
+    for (e in this) block(e)
+}
+```
+
+For example, The compiler will translate :
+
+```kotlin
+val numbers = listOf(1, 2, 3, 4, 5)
+numbers.each { println(it) }
+```
+
+To something like:
+```kotlin
+val numbers = listOf(1, 2, 3, 4, 5)
+for (number in numbers)
+    println(number)
+```
+
+When using inline functions, there is no extra object allocation and no extra virtual method calls.
