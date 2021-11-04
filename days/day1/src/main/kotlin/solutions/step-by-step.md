@@ -51,7 +51,7 @@ for (line1 in lines) {
 ```kotlin
 for (line1 in lines) {
     for(line2 in lines) {
-        if(lines1 + lines2 == 2020) {
+        if(line1 + line2 == 2020) {
             println("OK")
             return
         }
@@ -62,8 +62,8 @@ for (line1 in lines) {
 ```kotlin
 for (line1 in lines) {
     for(line2 in lines) {
-        if(lines1 + lines2 == 2020) {
-            println(lines1 * lines2)
+        if(line1 + line2 == 2020) {
+            println(line1 * line2)
             return
         }
     }
