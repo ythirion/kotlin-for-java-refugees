@@ -66,13 +66,22 @@ fun Pair<Int, Int>.r(): RationalNumber = RationalNumber(first, second)
 Pair(8, 4).r()
 
 // Higher Order Function
-fun <T, R> Collection<T>.fold(
-    initial: R,
-    combine: (R, T) -> R
-): R {
+fun <T, R> Collection<T>.fold(initial: R, combine: (R, T) -> R): R {
     var accumulator: R = initial
     for (element: T in this) {
         accumulator = combine(accumulator, element)
     }
     return accumulator
 }
+
+inline fun <T, R> Collection<T>.inlineFold(initial: R, combine: (R, T) -> R): R {
+    var accumulator: R = initial
+    for (element: T in this) {
+        accumulator = combine(accumulator, element)
+    }
+    return accumulator
+}
+
+val list = listOf(1, 2, 3)
+list.fold(0) { agg, next -> agg + next }
+list.inlineFold(0) { agg, next -> agg + next }
