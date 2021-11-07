@@ -1,4 +1,4 @@
-package demo.blog
+package demo.solution.blog
 
 import io.vavr.control.Either
 import io.vavr.control.Either.right

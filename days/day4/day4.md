@@ -17,9 +17,10 @@ Create a simple integration test for a controller :
     * Let's implement the solution - 20'
     * Collective debriefing - 10'
       * What can be improved ?
+    * Tips:
+      * 
 
-### Clean Test - 30'
- Refactoring and clean test - 30'
+### Refactoring and clean test 30'
  * Take a few minutes to identify anti-patterns in the tests - 5'
  * Collective debriefing - 5'
    * Anti-patterns to find [here](/src/main/kotlin/solutions/step-by-step.md)
@@ -27,5 +28,10 @@ Create a simple integration test for a controller :
    * By using what you have seen during the previous days, how could you better organize the tests ?
  * Collective debriefing - 10'
 
+### Tests integration using TestContainers 15' 
+* What's Tests containers : [Test containers documentation](https://www.testcontainers.org/)
+* Use a Real data base like Postgre
+
+ 
 ## Debriefing - 5'
 What was the most important concept you discovered today ?

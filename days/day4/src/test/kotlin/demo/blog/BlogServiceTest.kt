@@ -1,8 +1,9 @@
 package demo.blog
 
-import demo.blog.Article
-import demo.blog.BlogService
-import demo.blog.Comment
+import demo.solution.blog.Article
+import demo.solution.blog.BlogService
+import demo.solution.blog.Comment
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
@@ -17,7 +18,7 @@ internal class BlogServiceTest {
         )
         val result = blogService.addComment(article, "Amazing article !!!", "Pablo Escobar")
 
-        assert(result.isRight)
+        assertTrue(result.isRight)
     }
 
     @Test
@@ -30,7 +31,7 @@ internal class BlogServiceTest {
         val text = "Amazing article !!!"
         val result = blogService.addComment(article, text, "Pablo Escobar")
 
-        assert(result.get().comments.first().text == text)
+        assertTrue(result.get().comments.first().text == text)
     }
 
     @Test
@@ -43,7 +44,7 @@ internal class BlogServiceTest {
         val author = "Pablo Escobar"
         val result = blogService.addComment(article, "Amazing article !!!", author)
 
-        assert(result.get().comments.first().author == author)
+        assertTrue(result.get().comments.first().author == author)
     }
 
     @Test
@@ -68,6 +69,6 @@ internal class BlogServiceTest {
         val result = blogService
             .addComment(article, "Amazing article !!!", "Pablo Escobar")
 
-        assert(result.isLeft)
+        assertTrue(result.isLeft)
     }
 }

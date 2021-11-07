@@ -20,3 +20,13 @@ nav_order: 1
 ### [Static Methods](https://kotlinlang.org/docs/java-to-kotlin-interop.html#static-methods)
 
 ### [Late init](https://kotlinlang.org/docs/properties.html#late-initialized-properties-and-variables)
+
+### [Equlas Operators]
+
+### [Type aliases](https://kotlinlang.org/docs/type-aliases.html)
+
+### [import](https://kotlinlang.org/docs/packages.html#imports)
+
+### [Inner Class](https://kotlinlang.org/docs/nested-classes.html#inner-classes)
+
+### [Top level function](https://kotlinlang.org/docs/functions.html#function-scope) 
