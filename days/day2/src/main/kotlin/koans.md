@@ -35,10 +35,10 @@ data class User(val name: String, val age: Int)
 ```
 
 The compiler automatically derives the following members from all properties declared in the primary constructor:
-* equals()/ hashCode() pair
-* toString() of the form "User(name=John, age=42)"
-* componentN() functions corresponding to the properties in their order of declaration.
-* copy() function
+* `equals()`/ `hashCode()` pair
+* `toString()` of the form `User(name=John, age=42)`
+* `componentN()` functions corresponding to the properties in their order of declaration
+* `copy()` function
 
 #### Prerequisites
 * The primary constructor needs to have **at least 1 parameter**.
@@ -46,7 +46,7 @@ The compiler automatically derives the following members from all properties dec
 * Data classes **cannot be** abstract, open, sealed, or inner.
 
 #### Copy()
-Use the copy() function to copy an object allowing to alter some of its properties while keeping the rest unchanged
+Use the `copy()` function to copy an object allowing to alter some of its properties while keeping the rest unchanged
 ```kotlin
 val jack = User(name = "Jack", age = 1)
 val olderJack = jack.copy(age = 2)
