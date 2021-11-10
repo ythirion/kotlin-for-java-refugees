@@ -1,12 +1,12 @@
 ---
 layout: default
-title: What is missing
+title: What we missed
 parent: Kotlin for java refugees
 nav_order: 5
 has_children: true
 ---
 
-# What is missing
+# What we missed
 - Pattern matching
 ```kotlin
 when (x) {
@@ -54,8 +54,15 @@ val result = try {
         throw IllegalStateException(e)
     }
 ```
-- Sealed class
-- Enum class
+- Sealed / Enum class
+- Generics
+```kotlin
+class Box<T>(t: T) {
+    var value = t
+}
+
+val box: Box<Int> = Box<Int>(1)
+```
 - Delegation
 ```kotlin
 interface Base {
