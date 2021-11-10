@@ -7,7 +7,17 @@ has_children: true
 ---
 
 # What we missed
+- Getter/setter
+
+```kotlin
+var stringRepresentation: String
+    get() = this.toString()
+    set(value) {
+        setDataFromString(value) // parses the string and assigns values to other properties
+    }
+```
 - Pattern matching
+
 ```kotlin
 when (x) {
     is Foo -> ...
@@ -25,6 +35,7 @@ fun transform(color: String): Int {
 }
 ```
 - Iterate over a range (steps, bound inclusive/exclusive)
+
 ```kotlin
 for (i in 1..100) { ... }  // closed range: includes 100
 for (i in 1 until 100) { ... } // half-open range: does not include 100
@@ -33,12 +44,14 @@ for (x in 10 downTo 1) { ... }
 if (x in 1..10) { ... }
 ```
 - Lazy properties
+
 ```kotlin
 val p: String by lazy {
     // compute the string
 }
 ```
 - List/Map access
+
 ```kotlin
 println(map["key"])
 map["key"] = value
@@ -47,6 +60,7 @@ println(list[0])
 list[0] = value
 ```
 - Try/Catch expression
+
 ```kotlin
 val result = try {
         count()
@@ -56,6 +70,7 @@ val result = try {
 ```
 - Sealed / Enum class
 - Generics
+
 ```kotlin
 class Box<T>(t: T) {
     var value = t
@@ -64,6 +79,7 @@ class Box<T>(t: T) {
 val box: Box<Int> = Box<Int>(1)
 ```
 - Delegation
+
 ```kotlin
 interface Base {
     fun printMessage()
@@ -81,6 +97,7 @@ class Derived(b: Base) : Base by b {
 ```
 - Inheritance/overriding
 - Operator overloading
+
 ```kotlin
 data class Point(val x: Int, val y: Int)
 
@@ -93,6 +110,7 @@ fun main() {
 }
 ```
 - Builder and DSL
+
 ```kotlin
 fun result() =
     html {
@@ -131,7 +149,7 @@ fun html(init: HTML.() -> Unit): HTML {
     return html
 }
 ```
-- Coroutines
+- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
 - Kotlin script
 - [Kotlin Multiplatform Mobile](https://kotlinlang.org/lp/mobile/)
 - [Kotlin for Javascript Refugees ??](https://kotlinlang.org/docs/js-overview.html)
