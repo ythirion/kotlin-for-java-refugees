@@ -116,6 +116,7 @@ var x = 5 // `Int` type is inferred
 * A String literal that can contains newlines and arbitrary text
 * Raw string is delimited by `"""`
 * To remove leading whitespace from raw strings, use the `trimMargin()` function
+* By default `|` is the prefix that should be deleted
 
 ```kotlin
 val text = """
@@ -130,10 +131,6 @@ val text = """
 
 * `for` loop iterates through anything that provides an iterator
 * Iterates through anything that provides an iterator
-* Has a member or an extension function iterator() that returns Iterator<>:
-* has a member or an extension function next()
-* has a member or an extension function hasNext() that returns Boolean.
-* All of these three functions need to be marked as [operator](https://kotlinlang.org/docs/operator-overloading.html).
 
 ```kotlin
 for (item in collection) print(item)
