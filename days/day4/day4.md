@@ -17,8 +17,6 @@ Create a simple integration test for a controller :
     * Let's implement the solution - 20'
     * Collective debriefing - 10'
       * What can be improved ?
-    * Tips:
-      * 
 
 ### Refactoring and clean test 30'
  * Take a few minutes to identify anti-patterns in the tests - 5'

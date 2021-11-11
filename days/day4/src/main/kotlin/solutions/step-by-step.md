@@ -8,6 +8,8 @@ nav_order: 2
 
 # Step-by-step guide
 
+## [Let's learn new concepts in kotlin](../koans.md)
+
 ## Create a simple test
 
 ```kotlin
