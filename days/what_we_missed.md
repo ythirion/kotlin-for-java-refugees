@@ -7,7 +7,8 @@ has_children: true
 ---
 
 # What we missed
-- Getter/setter
+
+## Getter/setter
 
 ```kotlin
 var stringRepresentation: String
@@ -16,7 +17,7 @@ var stringRepresentation: String
         setDataFromString(value) // parses the string and assigns values to other properties
     }
 ```
-- Pattern matching
+## Pattern matching
 
 ```kotlin
 when (x) {
@@ -34,7 +35,7 @@ fun transform(color: String): Int {
     }
 }
 ```
-- Iterate over a range (steps, bound inclusive/exclusive)
+## Iterate over a range (steps, bound inclusive/exclusive)
 
 ```kotlin
 for (i in 1..100) { ... }  // closed range: includes 100
@@ -43,14 +44,14 @@ for (x in 2..10 step 2) { ... }
 for (x in 10 downTo 1) { ... }
 if (x in 1..10) { ... }
 ```
-- Lazy properties
+## Lazy properties
 
 ```kotlin
 val p: String by lazy {
     // compute the string
 }
 ```
-- List/Map access
+## List/Map access
 
 ```kotlin
 println(map["key"])
@@ -59,7 +60,7 @@ map["key"] = value
 println(list[0])
 list[0] = value
 ```
-- Try/Catch expression
+## Try/Catch expression
 
 ```kotlin
 val result = try {
@@ -68,8 +69,8 @@ val result = try {
         throw IllegalStateException(e)
     }
 ```
-- Sealed / Enum class
-- Generics
+## Sealed / Enum class
+## Generics
 
 ```kotlin
 class Box<T>(t: T) {
@@ -78,7 +79,7 @@ class Box<T>(t: T) {
 
 val box: Box<Int> = Box<Int>(1)
 ```
-- Delegation
+## Delegation
 
 ```kotlin
 interface Base {
@@ -95,8 +96,8 @@ class Derived(b: Base) : Base by b {
     override fun printMessage() { print("abc") }
 }
 ```
-- Inheritance/overriding
-- Operator overloading
+## Inheritance/overriding
+## Operator overloading
 
 ```kotlin
 data class Point(val x: Int, val y: Int)
@@ -109,7 +110,7 @@ fun main() {
    println(-point)  // prints "Point(x=-10, y=-20)"
 }
 ```
-- Builder and DSL
+## Builder and DSL
 
 ```kotlin
 fun result() =
@@ -149,7 +150,7 @@ fun html(init: HTML.() -> Unit): HTML {
     return html
 }
 ```
-- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
-- Kotlin script
-- [Kotlin Multiplatform Mobile](https://kotlinlang.org/lp/mobile/)
-- [Kotlin for Javascript Refugees ??](https://kotlinlang.org/docs/js-overview.html)
+## [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
+## Kotlin script
+## [Kotlin Multiplatform Mobile](https://kotlinlang.org/lp/mobile/)
+## [Kotlin for Javascript Refugees ??](https://kotlinlang.org/docs/js-overview.html)
