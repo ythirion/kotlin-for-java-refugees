@@ -276,7 +276,6 @@ class BlogServiceRefactoredTest {
 ** Add Dependecy for Postgres jdbc driver
 
 ```xml
-
 <dependency>
   <groupId>org.postgresql</groupId>
   <artifactId>postgresql</artifactId>
@@ -345,8 +344,9 @@ class IntegrationTests {
 }
 ```
 
-* Create a intgration test for Repository 
-```
+* Create an integration test for Repository 
+
+```kotlin
 @Testcontainers
 class MessageRepositoryTest(@Autowired  var messageRepository: MessageRepository) {
     val message = Message("1", "My first Message")
@@ -382,7 +382,6 @@ class MessageRepositoryTest(@Autowired  var messageRepository: MessageRepository
         Assertions.assertEquals(message.id, result.id)
         Assertions.assertEquals(message.text, result.text)
     }
-
 
 }
 ```
