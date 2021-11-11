@@ -3,7 +3,7 @@ layout: default
 title: What we missed
 parent: Kotlin for java refugees
 nav_order: 5
-has_children: true
+has_children: false
 ---
 
 # What we missed
