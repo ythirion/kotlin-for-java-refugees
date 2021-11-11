@@ -83,7 +83,7 @@ Now, callStatic() is static in Java while callNonStatic() is not:
 ### [Late init](https://kotlinlang.org/docs/properties.html#late-initialized-properties-and-variables)
 
 ### [Equals Operators](https://kotlinlang.org/docs/equality.html#referential-equality)
-####Structural Equality (`==` => Object.equals())
+#### Structural Equality (`==` => Object.equals())
 * `==` operator is used to **compare the data** of two variables
 * `==` operator in Kotlin only compares the data or variables, whereas in Java or other languages `==` is generally used to compare the references
 * The negated counterpart of == in Kotlin is != which is used to compare if both the values are not equal to each other.
