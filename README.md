@@ -1,6 +1,9 @@
 # kotlin-for-java-refugees
 Kotlin sessions for java refugees
 
+Website available [here](https://ythirion.github.io/kotlin-for-java-refugees/)
+![website](img/site.png)
+
 ## [Day 1 - Fundamentals](./days/day1/day1.md)
 
 * Functions
